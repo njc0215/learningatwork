@@ -1,0 +1,1 @@
+java -jar rtpsender.jar localhost 3000 test.xml %1 %2
