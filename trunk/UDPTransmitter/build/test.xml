@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tva:TVAMain xmlns:tva="urn:tva:metadata:2002"
+	xmlns:mpeg7="urn:mpeg:mpeg7:schema:2001"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:tva:metadata:2002 ..\schemas\tva_metadata_v13.xsd urn:mpeg:mpeg7:schema:2001 C:\JBuilder2008\Projects\TVAnytime\schemas\mpeg7_tva.xsd">
+	<tva:ProgramDescription>
+		<tva:ProgramInformationTable>
+			<tva:ProgramInformation
+				programId="crid://www.zdf.de/10000">
+				<tva:BasicDescription>
+					<tva:Title>HEIDELBERG</tva:Title>
+					<tva:Synopsis>TRAVEL IN HEIDELBERG</tva:Synopsis>
+					<tva:Genre
+						href="urn:tva:metadata:cs:ContentCS:2002:3.1.1">
+						<tva:Name>NEWS</tva:Name>
+					</tva:Genre>
+					<tva:ParentalGuidance>
+						<mpeg7:MinimumAge>1</mpeg7:MinimumAge>
+					</tva:ParentalGuidance>
+
+					<tva:RelatedMaterial>
+						<tva:HowRelated
+							href="urn:tva:metadata:cs:HowRelatedCS:2002:10">
+							<tva:Name>More Information</tva:Name>
+						</tva:HowRelated>
+						<tva:MediaLocator>
+							<mpeg7:MediaUri>
+								http://www.heidelberg.de
+							</mpeg7:MediaUri>
+						</tva:MediaLocator>
+					</tva:RelatedMaterial>
+<tva:RelatedMaterial>
+	<tva:HowRelated
+		href="urn:tva:metadata:cs:HowRelatedCS:2002:8">
+		<tva:Name>Commercial Advert</tva:Name>
+	</tva:HowRelated>
+	<tva:MediaLocator>
+		<mpeg7:MediaUri>
+			crid://www.adprovider.com/adidas/shoes/10023
+		</mpeg7:MediaUri>
+	</tva:MediaLocator>
+</tva:RelatedMaterial>
+				</tva:BasicDescription>
+			</tva:ProgramInformation>
+		</tva:ProgramInformationTable>
+	</tva:ProgramDescription>
+</tva:TVAMain>
