@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RTSP Core
+Bundle-SymbolicName: com.anhquan.demo.rtsp
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: NEC Europe Ltd.
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.commons.logging,
+ org.junit,
+ org.osgi.framework;version="1.3.0"
