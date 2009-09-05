@@ -1,0 +1,22 @@
+ffmpeg -h
+
+ffmpeg --formats
+
+ffmpeg -i InputFile OutputFile
+
+
+change audio birate to 128Kbps: -ab 128
+change video bitrate to 1200kpbs: -b 1200
+	(bitrate between 100-1400 is quite ok, up to 23000 (DVD-RIPP))
+
+specify the target (e.g. vcd,svcd,dvd,dv,pal-vcd,ntsc-svcd): -target vcd
+
+change video codec to mpeg4: -vcode mpeg4
+remove audio stream: -an
+remove video stream: -vn
+
+copy audio only: -acodec copy output.mp3
+start from : -timecode_frame_start FRAME_NUMBER
+FRAME_NUMBER = ((Hour*60+Minute)*60+Second) * FRAME_PER_SECOND + MILLISEC
+
+Start from T (seconds) in duration D (seconds):  -ss 00:05:00:00 -t 00:05:00:00 
