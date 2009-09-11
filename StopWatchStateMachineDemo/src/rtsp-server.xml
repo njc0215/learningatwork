@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0"
+	initialstate="init">
+
+	<state id="init">
+		<transition event="setup.response.received" target="ready" />
+		<transition event="teardown.response.received" target="init" />
+		<transition event="request.timeout" target="init" />
+	</state>
+
+	<state id="ready">
+		<transition event="setup.response.received" target="ready" />
+		<transition event="teardown.response.received" target="init" />
+		<transition event="play.response.received" target="playing" />
+		<transition event="record.response.received" target="recording" />
+		<transition event="request.timeout" target="init" />		
+	</state>
+
+	<state id="recording">
+		<transition event="record.response.received" target="recording" />
+		<transition event="setup.response.received" target="recording" />
+		<transition event="teardown.response.received" target="init" />
+		<transition event="pause.response.received" target="ready" />
+		<transition event="request.timeout" target="init" />
+	</state>
+
+	<state id="playing">
+		<transition event="play.response.received" target="playing" />
+		<transition event="setup.response.received" target="playing" />
+		<transition event="teardown.response.received" target="init" />
+		<transition event="pause.response.received" target="ready" />
+		<transition event="request.timeout" target="init" />
+	</state>
+
+</scxml>
