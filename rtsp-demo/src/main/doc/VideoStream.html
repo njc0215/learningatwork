@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+<title>
+VideoStream.java
+</title>
+
+<style type="text/css">
+
+H1	{font-family:Arial, sans-serif; color:#8989DB; 
+	 font-size:19pt; font-weight:normal;}
+
+H2	{font-family:Arial, sans-serif; color:black; 
+	 font-size:16pt; font-weight:bold;}
+
+H3	{font-family:Arial, sans-serif; color:#8989DB; 
+	 font-size:14pt; font-weight:bold;}
+
+P	{font-family:Arial, sans-serif; font-size:10pt;}
+
+TD	{font-family:Arial, sans-serif; font-size:10pt;}
+
+TH	{font-family:Arial, sans-serif; font-size:10pt;}
+
+DT	{font-family:Arial, sans-serif; font-size:10pt;}
+
+DD	{font-family:Arial, sans-serif; font-size:10pt;}
+
+LI	{font-family:Arial, sans-serif; font-size:10pt;}
+
+a:link	{color:#000066;}
+
+a:visited	{color:#666666;}
+
+</style>
+
+
+</head><body>
+<h3><a name="videostream">VideoStream.java</a></h3>
+
+<pre>//VideoStream
+
+import java.io.*;
+
+public class VideoStream {
+
+  FileInputStream fis; //video file
+  int frame_nb; //current frame nb
+
+  //-----------------------------------
+  //constructor
+  //-----------------------------------
+  public VideoStream(String filename) throws Exception{
+
+    //init variables
+    fis = new FileInputStream(filename);
+    frame_nb = 0;
+  }
+
+  //-----------------------------------
+  // getnextframe
+  //returns the next frame as an array of byte and the size of the frame
+  //-----------------------------------
+  public int getnextframe(byte[] frame) throws Exception
+  {
+    int length = 0;
+    String length_string;
+    byte[] frame_length = new byte[5];
+
+    //read current frame length
+    fis.read(frame_length,0,5);
+	
+    //transform frame_length to integer
+    length_string = new String(frame_length);
+    length = Integer.parseInt(length_string);
+	
+    return(fis.read(frame,0,length));
+  }
+}
+</pre>
+
+</body></html>
