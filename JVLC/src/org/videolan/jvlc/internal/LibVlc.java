@@ -79,6 +79,12 @@ public interface LibVlc extends Library
         public event_type_specific event_type_specific;
 
     }
+    
+    public class libvlc_rectangle_t extends Structure
+    {
+        public int top, left;
+        public int bottom, right;
+    }
 
     public class media_meta_changed extends Structure
     {
@@ -341,6 +347,8 @@ public interface LibVlc extends Library
     void libvlc_video_reparent(LibVlcMediaPlayer instance, long drawable, libvlc_exception_t exception);
 
     void libvlc_video_set_size(LibVlcInstance instance, int width, int height, libvlc_exception_t exception);
+    
+    void libvlc_video_set_viewport(LibVlcInstance instance, libvlc_rectangle_t view, libvlc_rectangle_t clip, libvlc_exception_t exception);
 
     // audio
 
