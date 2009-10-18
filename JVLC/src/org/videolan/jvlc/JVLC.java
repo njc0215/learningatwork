@@ -29,7 +29,6 @@
 
 package org.videolan.jvlc;
 
-import java.awt.Canvas;
 import java.awt.Component;
 
 import org.videolan.jvlc.internal.LibVlc;
@@ -102,10 +101,19 @@ public class JVLC
     public void setVideoOutput(Component canvas)
     {
         long drawable = Native.getComponentID(canvas);
-        libvlc_exception_t exception = new libvlc_exception_t();
-        libvlc.libvlc_video_set_parent(instance, drawable, exception );
+        setVideoOutput(drawable);
     }
 
+    /**
+     * drawable is window handle (ID) of a drawable object
+     * @param drawable
+     */
+    public void setVideoOutput(long drawable) {
+		// TODO Auto-generated method stub
+        libvlc_exception_t exception = new libvlc_exception_t();
+        libvlc.libvlc_video_set_parent(instance, drawable, exception );
+	}
+    
     public Logger getLogger()
     {
         return new Logger(this);
@@ -215,5 +223,5 @@ public class JVLC
     public String getVLCVersion(){
     	return libvlc.libvlc_get_version();
     }
-    
+
 }
