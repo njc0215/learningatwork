@@ -38,10 +38,10 @@ import org.videolan.jvlc.JVLC;
 
 public class MultipleVideosSample
 {
-
+	
     private static int videosNumber = 1;
-    private static String filename ="http://www.youtube.com/get_video?video_id=96QRVfto7OM&t=vjVQa1PpcFMlvKnA1mt78F0Lygm2TAYSghPnDJc_woM%3D&fmt=18";
-    static String[] vlcArgs = new String[] { "-vvv", "--plugin-path=C:\\dev\\lib\\vlc\\vlc-0.9.9-win32\\vlc-0.9.9\\plugins" };
+    private static String filename ="http://www.youtube.com/get_video?video_id=jqxENMKaeCU&t=vjVQa1PpcFM2CjZYyLJUUxUhAEs_OAKYKfYnbDjARSg%3D&fmt=18";
+    static String[] vlcArgs = new String[] { "-vvv", "--plugin-path=vlc_exec\\plugins" };
     
     /**
      * @param args
@@ -95,6 +95,7 @@ public class MultipleVideosSample
             Thread.sleep(500);
         }
         
+        System.in.read();
     }
     
 }

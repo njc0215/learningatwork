@@ -17,13 +17,13 @@ public class VLCExample
     {
         System.out.println("== Starting VLCExample ==");
 
-        String[] vlcArgs = new String[] { "-vvv", "--plugin-path=C:\\dev\\lib\\vlc\\vlc-0.9.9-win32\\vlc-0.9.9\\plugins" };
+        String[] vlcArgs = new String[] { "-vvv", "--plugin-path=vlc_exec\\plugins" };
         JVLC jvlc = new JVLC(vlcArgs);
         System.out.println("... done.");
 
         System.out.println("You are running VLC version: "+jvlc.getVLCVersion());
         
-        MediaDescriptor mediaDescriptor = new MediaDescriptor(jvlc, "http://www.youtube.com/get_video?video_id=96QRVfto7OM&t=vjVQa1PpcFMlvKnA1mt78F0Lygm2TAYSghPnDJc_woM%3D&fmt=18");
+        MediaDescriptor mediaDescriptor = new MediaDescriptor(jvlc, "http://www.youtube.com/get_video?video_id=jqxENMKaeCU&t=vjVQa1PpcFM2CjZYyLJUUxUhAEs_OAKYKfYnbDjARSg%3D&fmt=18");
         MediaPlayer mediaPlayer = mediaDescriptor.getMediaPlayer();
 
         mediaPlayer.addListener(new MediaPlayerListener()
@@ -76,7 +76,7 @@ public class VLCExample
         System.out.print("x");
         System.out.println(video.getHeight(mediaPlayer));
         System.out.print("Fullscreen... ");
-        video.setFullscreen(mediaPlayer, true);
+        video.setFullscreen(mediaPlayer, false);
         Thread.sleep(3000);
         System.out.println("real size.");
         video.setFullscreen(mediaPlayer, false);
